@@ -2,10 +2,10 @@ package jdbc;
 
 public class Student {
 
-	int id;
-	String fName;
-	String lName;
-	String email;
+	public int id;
+	public String fName;
+	public String lName;
+	public String email;
 	public Student(int id, String fName, String lName, String email) {
 		super();
 		this.id = id;
@@ -16,6 +16,10 @@ public class Student {
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + "]";
 	}
 	
 	
