@@ -1,4 +1,4 @@
-package hibernateExample.oneToOneRelation;
+package hibernateExample.basics;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,15 +1,14 @@
-package hibernateExample.oneToOneRelation;
+package hibernateExample.basics;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-//@Table(name="Reports")
+@Table(name="Reports")
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +16,6 @@ public class Book {
 	int isbn;
 	String title;
 	String author;
-	@OneToOne
-	Student st;
 	public Book(int isbn, String title, String author) {
 		super();
 		this.isbn = isbn;

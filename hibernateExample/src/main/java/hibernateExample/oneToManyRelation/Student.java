@@ -1,11 +1,14 @@
-package hibernateExample.oneToOneRelation;
+package hibernateExample.oneToManyRelation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 @Entity
 public class Student {
 	@Id
@@ -14,23 +17,8 @@ public class Student {
 	String fName;
 	String lName;
 	String email;
-	@OneToOne(mappedBy = "st")
-	Book book;
-	
-	
-	
-	public Student() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Student(int id, String fName, String lName, String email, Book book) {
-		super();
-		this.id = id;
-		this.fName = fName;
-		this.lName = lName;
-		this.email = email;
-		this.book = book;
-	}
+	@OneToMany
+	List<Book> books= new ArrayList();
 	public Student(int id, String fName, String lName, String email) {
 		super();
 		this.id = id;
