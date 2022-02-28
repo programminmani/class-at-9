@@ -10,11 +10,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.BoxLayout;
+import java.awt.FlowLayout;
 
 public class MyJframe extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -39,19 +41,19 @@ public class MyJframe extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setLayout(null);
+		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		btnNewButton_1 = new JButton("New button");
+		contentPane.add(btnNewButton_1);
 		
 		
 		textField = new JTextField();
-		textField.setBounds(31, 71, 153, 23);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Enter text here!");
-		lblNewLabel.setBounds(31, 46, 153, 14);
 		contentPane.add(lblNewLabel);
 		JButton btnNewButton = new JButton("Login");
-		btnNewButton.setBounds(31, 105, 153, 23);
 		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPane);
