@@ -3,7 +3,7 @@ package intro.abstractionExample;
 import java.util.List;
 import java.util.Optional;
 
-public interface DAO<T> {
+public abstract class DAO<T> {
 //	void connect() {
 //		System.out.println("connected");
 //	}
@@ -11,14 +11,14 @@ public interface DAO<T> {
 //		System.out.println("Disconnected");
 //	}
 	
-	Optional<T> get(long id);
+	abstract Optional<T> get(long id);
     
-    List<T> getAll();
+	abstract List<T> getAll();
     
-    void save(T t);
+	abstract void save(T t);
     
-    void update(T t, String[] params);
+	abstract void update(T t, String[] params);
     
-    void delete(T t);
+	abstract void delete(T t);
 	
 }

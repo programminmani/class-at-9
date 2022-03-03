@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -13,7 +14,9 @@ import studentManagementUI.Model.Student;
 import studentManagementUI.Model.Dao.StudentDao;
 
 public class FormPanel extends JPanel {
-	public FormPanel() {
+	JFrame frame = new JFrame();
+	public FormPanel(JFrame frame) {
+		this.frame = frame;
 		setBackground(Color.cyan);
 		setBounds(10, 10, 370, 200);
 		setLayout(null);
@@ -54,9 +57,12 @@ public class FormPanel extends JPanel {
 				Student st = new Student(fName, lName, email);
 				StudentDao sDao = new StudentDao();
 				sDao.insert(st);
+				
+				
 			}
 		});
 		
 		setVisible(true);
+		this.frame.add(this);
 	}
 }

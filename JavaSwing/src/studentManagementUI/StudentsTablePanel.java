@@ -1,6 +1,7 @@
 package studentManagementUI;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class StudentsTablePanel extends JPanel {
 	public StudentsTablePanel() {
 		setBackground(Color.red);
 		setBounds(10, 220, 370, 235);
-		setLayout(null);
+		setLayout(new FlowLayout());
 		JLabel title = new JLabel("Students Table");
 		title.setBounds(150,20,100,30);
 		add(title);
@@ -52,6 +53,7 @@ public class StudentsTablePanel extends JPanel {
         //add(new JScrollPane(table).setBounds(10,50,350,180));
 		
 		StudentsTableScrollPane pane = new StudentsTableScrollPane();
+		pane.setBackground(Color.green);
 		pane.setBounds(10,50,350,180);
         add(pane);
 	}
